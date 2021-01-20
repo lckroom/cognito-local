@@ -41,7 +41,7 @@ export const createServer = (
     });
   });
 
-  app.post("/", async (req, res) => {
+  app.post("/", async (req, res): Promise<any> => {
     const xAmzTarget = req.headers["x-amz-target"];
 
     if (!xAmzTarget) {

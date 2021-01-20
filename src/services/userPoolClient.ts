@@ -93,13 +93,13 @@ export const createUserPoolClient = async (
         ClientId: id,
         ClientName: name,
         UserPoolId: defaultOptions.Id,
-        CreationDate: new Date().getTime(),
-        LastModifiedDate: new Date().getTime(),
+        CreationDate: Math.round(new Date().getTime()/1000),
+        LastModifiedDate: Math.round(new Date().getTime()/1000),
         AllowedOAuthFlowsUserPoolClient: false,
         RefreshTokenValidity: 30,
       };
 
-      await clientsDataStore.set(["Clients", id], appClient);
+      await clientsDataStore.set(id, appClient);
 
       return appClient;
     },

@@ -62,14 +62,14 @@ describe("User Pool Client", () => {
         AllowedOAuthFlowsUserPoolClient: false,
         ClientId: expect.stringMatching(/^[a-z0-9]{25}$/),
         ClientName: "clientName",
-        CreationDate: now.getTime(),
-        LastModifiedDate: now.getTime(),
+        CreationDate: Math.floor(now.getTime()/1000),
+        LastModifiedDate: Math.floor(now.getTime()/1000),
         RefreshTokenValidity: 30,
         UserPoolId: "local",
       });
 
       expect(mockClientsDataStore.set).toHaveBeenCalledWith(
-        ["Clients", result.ClientId],
+        result.ClientId,
         result
       );
     });

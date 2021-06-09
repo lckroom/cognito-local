@@ -41,7 +41,7 @@ export const createServer = (
     });
   });
 
-  app.post("/", async (req, res) => {
+  app.post("/", async (req, res): Promise<any> => {
     const xAmzTarget = req.headers["x-amz-target"];
 
     if (!xAmzTarget) {
@@ -100,17 +100,13 @@ export const createServer = (
       };
 
       return new Promise((resolve, reject) => {
-        const httpServer = app.listen(
-          actualOptions.port,
-          actualOptions.hostname,
-          (err) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(httpServer);
-            }
-          }
-        );
+        const httpServer = app
+          .listen(actualOptions.port, actualOptions.hostname, () => {
+            resolve(httpServer);
+          })
+          .on("error", (err) => {
+            reject(err);
+          });
       });
     },
   };

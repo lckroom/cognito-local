@@ -72,7 +72,7 @@ describe("SignUp target", () => {
     await signUp({
       ClientId: "clientId",
       Password: "pwd",
-      Username: "0000-0000",
+      Username: "00000000-0000-0000-0000-000000000000",
       UserAttributes: [],
     });
 
@@ -94,7 +94,7 @@ describe("SignUp target", () => {
     await signUp({
       ClientId: "clientId",
       Password: "pwd",
-      Username: "0000-0000",
+      Username: "00000000-0000-0000-0000-000000000000",
       UserAttributes: [{ Name: "email", Value: "example@example.com" }],
     });
 
@@ -123,7 +123,7 @@ describe("SignUp target", () => {
     await signUp({
       ClientId: "clientId",
       Password: "pwd",
-      Username: "0000-0000",
+      Username: "00000000-0000-0000-0000-000000000000",
       UserAttributes: [{ Name: "email", Value: "example@example.com" }],
     });
 

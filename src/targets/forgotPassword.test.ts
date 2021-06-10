@@ -3,6 +3,7 @@ import { UserNotFoundError } from "../errors";
 import { CognitoClient, UserPoolClient } from "../services";
 import { Triggers } from "../services/triggers";
 import { ForgotPassword, ForgotPasswordTarget } from "./forgotPassword";
+import * as uuid from "uuid";
 
 describe("ForgotPassword target", () => {
   let forgotPassword: ForgotPasswordTarget;
@@ -63,6 +64,7 @@ describe("ForgotPassword target", () => {
       UserLastModifiedDate: now.getTime(),
       UserStatus: "CONFIRMED",
       Username: "0000-0000",
+      Sub: uuid.v4(),
     });
     mockCodeDelivery.mockResolvedValue("1234");
 
@@ -80,6 +82,7 @@ describe("ForgotPassword target", () => {
         UserLastModifiedDate: now.getTime(),
         UserStatus: "CONFIRMED",
         Username: "0000-0000",
+        Sub: expect.any(String),
       },
       {
         AttributeName: "email",
@@ -106,6 +109,7 @@ describe("ForgotPassword target", () => {
       UserLastModifiedDate: now.getTime(),
       UserStatus: "CONFIRMED",
       Username: "0000-0000",
+      Sub: uuid.v4(),
     });
     mockCodeDelivery.mockResolvedValue("1234");
 
@@ -124,6 +128,7 @@ describe("ForgotPassword target", () => {
       // TODO: validate whether an already confirmed user should stay confirmed when password reset starts?
       UserStatus: "CONFIRMED",
       Username: "0000-0000",
+      Sub: expect.any(String),
     });
   });
 });

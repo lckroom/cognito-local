@@ -15,6 +15,7 @@ import {
   PasswordVerifierOutput,
   SmsMfaOutput,
 } from "./initiateAuth";
+import * as uuid from "uuid";
 
 const UUID = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i;
 
@@ -67,6 +68,7 @@ describe("InitiateAuth target", () => {
         Enabled: true,
         UserCreateDate: new Date().getTime(),
         UserLastModifiedDate: new Date().getTime(),
+        Sub: uuid.v4(),
       });
 
       await expect(
@@ -89,6 +91,7 @@ describe("InitiateAuth target", () => {
         Password: "hunter2",
         Username: "0000-0000",
         Enabled: true,
+        Sub: uuid.v4(),
         UserCreateDate: new Date().getTime(),
         UserLastModifiedDate: new Date().getTime(),
       });
@@ -118,6 +121,7 @@ describe("InitiateAuth target", () => {
             UserCreateDate: new Date().getTime(),
             Enabled: true,
             Attributes: [],
+            Sub: uuid.v4(),
           });
           mockUserPoolClient.getUserByUsername.mockResolvedValue(null);
 
@@ -186,6 +190,7 @@ describe("InitiateAuth target", () => {
                   AttributeName: "phone_number",
                 },
               ],
+              Sub: uuid.v4(),
             };
             mockUserPoolClient.getUserByUsername.mockResolvedValue(user);
           });
@@ -230,6 +235,7 @@ describe("InitiateAuth target", () => {
               Enabled: true,
               UserCreateDate: new Date().getTime(),
               UserLastModifiedDate: new Date().getTime(),
+              Sub: uuid.v4(),
             });
           });
 
@@ -277,6 +283,7 @@ describe("InitiateAuth target", () => {
                   AttributeName: "phone_number",
                 },
               ],
+              Sub: uuid.v4(),
             };
             mockUserPoolClient.getUserByUsername.mockResolvedValue(user);
           });
@@ -324,6 +331,7 @@ describe("InitiateAuth target", () => {
               Enabled: true,
               UserCreateDate: new Date().getTime(),
               UserLastModifiedDate: new Date().getTime(),
+              Sub: uuid.v4(),
             });
           });
 
@@ -349,7 +357,7 @@ describe("InitiateAuth target", () => {
             expect(decodedAccessToken).toMatchObject({
               client_id: "clientId",
               iss: "http://localhost:9229/test",
-              sub: "0000-0000",
+              sub: expect.any(String),
               token_use: "access",
               username: "0000-0000",
               event_id: expect.stringMatching(UUID),
@@ -409,6 +417,7 @@ describe("InitiateAuth target", () => {
             Enabled: true,
             UserCreateDate: new Date().getTime(),
             UserLastModifiedDate: new Date().getTime(),
+            Sub: uuid.v4(),
           });
           const output = (await initiateAuth({
             ClientId: "clientId",
@@ -431,7 +440,7 @@ describe("InitiateAuth target", () => {
           expect(decodedAccessToken).toMatchObject({
             client_id: "clientId",
             iss: "http://localhost:9229/test",
-            sub: "0000-0000",
+            sub: expect.any(String),
             token_use: "access",
             username: "0000-0000",
             event_id: expect.stringMatching(UUID),

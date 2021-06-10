@@ -2,6 +2,7 @@ import { advanceTo } from "jest-date-mock";
 import { CognitoClient, UserPoolClient } from "../services";
 import { Triggers } from "../services/triggers";
 import { ListUsers, ListUsersTarget } from "./listUsers";
+import * as uuid from "uuid";
 
 describe("ListUsers target", () => {
   let listUsers: ListUsersTarget;
@@ -49,6 +50,7 @@ describe("ListUsers target", () => {
         UserStatus: "CONFIRMED",
         Password: "hunter2",
         Username: "0000-0000",
+        Sub: uuid.v4(),
         Enabled: true,
         UserCreateDate: new Date().getTime(),
         UserLastModifiedDate: new Date().getTime(),
@@ -59,6 +61,7 @@ describe("ListUsers target", () => {
         UserStatus: "CONFIRMED",
         Password: "password1",
         Username: "1111-1111",
+        Sub: uuid.v4(),
         Enabled: true,
         UserCreateDate: new Date().getTime(),
         UserLastModifiedDate: new Date().getTime(),

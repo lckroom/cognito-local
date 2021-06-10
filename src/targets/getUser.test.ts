@@ -56,6 +56,7 @@ describe("GetUser target", () => {
       UserCreateDate: new Date().getTime(),
       UserLastModifiedDate: new Date().getTime(),
       ConfirmationCode: "1234",
+      Sub: uuid.v4(),
     });
 
     const output = await getUser({

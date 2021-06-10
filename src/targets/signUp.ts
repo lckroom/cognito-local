@@ -43,8 +43,7 @@ export const SignUp = ({
     UserCreateDate: new Date().getTime(),
     UserLastModifiedDate: new Date().getTime(),
     UserStatus: "UNCONFIRMED",
-    // TODO: Why was this here?
-    // Username: uuid.v4(),
+    Sub: uuid.v4(),
     Username: body.Username,
   };
 

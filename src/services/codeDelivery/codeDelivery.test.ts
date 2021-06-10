@@ -1,6 +1,7 @@
 import { User } from "../userPoolClient";
 import { createCodeDelivery } from "./codeDelivery";
 import { CodeSender } from "./codeSender";
+import * as uuid from "uuid";
 
 describe("Code Delivery", () => {
   const user: User = {
@@ -11,6 +12,7 @@ describe("Code Delivery", () => {
     Enabled: true,
     UserCreateDate: new Date().getTime(),
     UserLastModifiedDate: new Date().getTime(),
+    Sub: uuid.v4(),
   };
 
   describe("when delivery method is EMAIL", () => {

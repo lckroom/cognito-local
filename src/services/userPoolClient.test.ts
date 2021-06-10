@@ -9,6 +9,7 @@ import {
   UserAttribute,
   UserPoolClient,
 } from "./userPoolClient";
+import * as uuid from "uuid";
 
 describe("User Pool Client", () => {
   let mockClientsDataStore: jest.Mocked<DataStore>;
@@ -92,6 +93,7 @@ describe("User Pool Client", () => {
         UserLastModifiedDate: now,
         UserCreateDate: now,
         Enabled: true,
+        Sub: uuid.v4(),
       });
 
       expect(mockDataStore.set).toHaveBeenCalledWith("Users.1", {
@@ -105,6 +107,7 @@ describe("User Pool Client", () => {
         UserLastModifiedDate: now,
         UserCreateDate: now,
         Enabled: true,
+        Sub: expect.any(String),
       });
     });
   });

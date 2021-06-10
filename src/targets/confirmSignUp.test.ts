@@ -3,6 +3,7 @@ import { CodeMismatchError, NotAuthorizedError } from "../errors";
 import { CognitoClient, UserPoolClient } from "../services";
 import { Triggers } from "../services/triggers";
 import { ConfirmSignUp, ConfirmSignUpTarget } from "./confirmSignUp";
+import * as uuid from "uuid";
 
 describe("ConfirmSignUp target", () => {
   let confirmSignUp: ConfirmSignUpTarget;
@@ -66,6 +67,7 @@ describe("ConfirmSignUp target", () => {
       UserLastModifiedDate: now.getTime(),
       UserStatus: "UNCONFIRMED",
       Username: "0000-0000",
+      Sub: uuid.v4(),
     });
 
     await expect(
@@ -89,6 +91,7 @@ describe("ConfirmSignUp target", () => {
         UserLastModifiedDate: now.getTime(),
         UserStatus: "UNCONFIRMED",
         Username: "0000-0000",
+        Sub: uuid.v4(),
       });
 
       // advance the time so we can see the last modified timestamp change
@@ -111,6 +114,7 @@ describe("ConfirmSignUp target", () => {
         UserLastModifiedDate: newNow.getTime(),
         UserStatus: "CONFIRMED",
         Username: "0000-0000",
+        Sub: expect.any(String),
       });
     });
 
@@ -127,6 +131,7 @@ describe("ConfirmSignUp target", () => {
           UserLastModifiedDate: now.getTime(),
           UserStatus: "UNCONFIRMED",
           Username: "0000-0000",
+          Sub: uuid.v4(),
         });
 
         await confirmSignUp({
@@ -164,6 +169,7 @@ describe("ConfirmSignUp target", () => {
           UserLastModifiedDate: now.getTime(),
           UserStatus: "UNCONFIRMED",
           Username: "0000-0000",
+          Sub: uuid.v4(),
         });
 
         await confirmSignUp({

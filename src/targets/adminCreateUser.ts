@@ -1,5 +1,6 @@
 import { Services } from "../services";
 import { User } from "../services/userPoolClient";
+import * as uuid from "uuid";
 
 interface Input {
   UserPoolId: string;
@@ -31,6 +32,7 @@ export const AdminCreateUser = ({
     ConfirmationCode: undefined,
     UserCreateDate: new Date().getTime(),
     UserLastModifiedDate: new Date().getTime(),
+    Sub: uuid.v4(),
   };
   await userPool.saveUser(user);
   // TODO: Shuldn't return password.

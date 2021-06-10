@@ -53,6 +53,7 @@ export interface User {
   Password: string;
   ConfirmationCode?: string;
   MFACode?: string;
+  Sub: string;
 }
 
 type UsernameAttribute = "email" | "phone_number";
@@ -96,8 +97,8 @@ export const createUserPoolClient = async (
         ClientId: id,
         ClientName: name,
         UserPoolId: defaultOptions.Id,
-        CreationDate: Math.round(new Date().getTime()/1000),
-        LastModifiedDate: Math.round(new Date().getTime()/1000),
+        CreationDate: Math.round(new Date().getTime() / 1000),
+        LastModifiedDate: Math.round(new Date().getTime() / 1000),
         AllowedOAuthFlowsUserPoolClient: false,
         RefreshTokenValidity: 30,
       };

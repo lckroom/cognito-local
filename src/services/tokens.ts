@@ -32,7 +32,7 @@ export async function generateTokens(
   return {
     AccessToken: jwt.sign(
       {
-        sub: user.Username,
+        sub: user.Sub,
         event_id: eventId,
         token_use: "access",
         scope: "aws.cognito.signin.user.admin", // TODO: scopes

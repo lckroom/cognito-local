@@ -9,6 +9,7 @@ import {
 } from "../src/services/userPoolClient";
 import fs from "fs";
 import { promisify } from "util";
+import * as uuid from "uuid";
 
 const mkdtemp = promisify(fs.mkdtemp);
 const readFile = promisify(fs.readFile);
@@ -57,6 +58,7 @@ describe("User Pool Client", () => {
         UserLastModifiedDate: now,
         UserCreateDate: now,
         Enabled: true,
+        Sub: uuid.v4(),
       });
 
       const file = JSON.parse(await readFile(path + "/local.json", "utf-8"));
@@ -75,6 +77,7 @@ describe("User Pool Client", () => {
             UserLastModifiedDate: now,
             UserCreateDate: now,
             Enabled: true,
+            Sub: expect.any(String),
           },
         },
       });
@@ -93,6 +96,7 @@ describe("User Pool Client", () => {
         UserLastModifiedDate: now,
         UserCreateDate: now,
         Enabled: true,
+        Sub: uuid.v4(),
       });
 
       let file = JSON.parse(await readFile(path + "/local.json", "utf-8"));
@@ -112,6 +116,7 @@ describe("User Pool Client", () => {
             UserLastModifiedDate: now,
             UserCreateDate: now,
             Enabled: true,
+            Sub: expect.any(String),
           },
         },
       });
@@ -124,6 +129,7 @@ describe("User Pool Client", () => {
         UserLastModifiedDate: now,
         UserCreateDate: now,
         Enabled: true,
+        Sub: uuid.v4(),
       });
 
       file = JSON.parse(await readFile(path + "/local.json", "utf-8"));
@@ -142,6 +148,7 @@ describe("User Pool Client", () => {
             UserLastModifiedDate: now,
             UserCreateDate: now,
             Enabled: true,
+            Sub: expect.any(String),
           },
         },
       });
@@ -164,6 +171,7 @@ describe("User Pool Client", () => {
         UserCreateDate: new Date().getTime(),
         UserLastModifiedDate: new Date().getTime(),
         Enabled: true,
+        Sub: uuid.v4(),
       });
     });
 
@@ -200,6 +208,7 @@ describe("User Pool Client", () => {
         UserCreateDate: now.getTime(),
         UserLastModifiedDate: now.getTime(),
         Enabled: true,
+        Sub: uuid.v4(),
       });
 
       await userPool.saveUser({
@@ -210,6 +219,7 @@ describe("User Pool Client", () => {
         UserCreateDate: now.getTime(),
         UserLastModifiedDate: now.getTime(),
         Enabled: true,
+        Sub: uuid.v4(),
       });
     });
 
@@ -229,6 +239,7 @@ describe("User Pool Client", () => {
           UserCreateDate: now.getTime(),
           UserLastModifiedDate: now.getTime(),
           Enabled: true,
+          Sub: expect.any(String),
         },
         {
           Username: "2",
@@ -238,6 +249,7 @@ describe("User Pool Client", () => {
           UserCreateDate: now.getTime(),
           UserLastModifiedDate: now.getTime(),
           Enabled: true,
+          Sub: expect.any(String),
         },
       ]);
     });

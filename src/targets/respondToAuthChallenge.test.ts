@@ -8,6 +8,7 @@ import {
   RespondToAuthChallenge,
   RespondToAuthChallengeTarget,
 } from "./respondToAuthChallenge";
+import * as uuid from "uuid";
 
 const UUID = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i;
 
@@ -80,6 +81,7 @@ describe("RespondToAuthChallenge target", () => {
         UserCreateDate: new Date().getTime(),
         UserLastModifiedDate: new Date().getTime(),
         MFACode: "1234",
+        Sub: uuid.v4(),
       });
 
       const output = await respondToAuthChallenge({
@@ -103,7 +105,7 @@ describe("RespondToAuthChallenge target", () => {
       expect(decodedAccessToken).toMatchObject({
         client_id: "clientId",
         iss: "http://localhost:9229/test",
-        sub: "0000-0000",
+        sub: expect.any(String),
         token_use: "access",
         username: "0000-0000",
         event_id: expect.stringMatching(UUID),
@@ -148,10 +150,11 @@ describe("RespondToAuthChallenge target", () => {
         ],
         UserStatus: "CONFIRMED",
         Password: "hunter2",
-        Username: "0000-0000",
+        Username: "hunter",
         Enabled: true,
         UserCreateDate: new Date().getTime(),
         UserLastModifiedDate: new Date().getTime(),
+        Sub: uuid.v4(),
         MFACode: "1234",
       });
 

@@ -3,6 +3,7 @@ import { UsernameExistsError } from "../errors";
 import { CognitoClient, UserPoolClient } from "../services";
 import { Triggers } from "../services/triggers";
 import { SignUp, SignUpTarget } from "./signUp";
+import * as uuid from "uuid";
 
 const UUID = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i;
 
@@ -53,7 +54,8 @@ describe("SignUp target", () => {
       UserCreateDate: now.getTime(),
       UserLastModifiedDate: now.getTime(),
       UserStatus: "CONFIRMED",
-      Username: "0000-0000",
+      Username: "hunter",
+      Sub: uuid.v4(),
     });
 
     await expect(
@@ -84,6 +86,7 @@ describe("SignUp target", () => {
       UserLastModifiedDate: now.getTime(),
       UserStatus: "UNCONFIRMED",
       Username: expect.stringMatching(UUID),
+      Sub: expect.stringMatching(UUID),
     });
   });
 
@@ -107,6 +110,7 @@ describe("SignUp target", () => {
         UserLastModifiedDate: now.getTime(),
         UserStatus: "UNCONFIRMED",
         Username: expect.stringMatching(UUID),
+        Sub: expect.stringMatching(UUID),
       },
       {
         AttributeName: "email",
@@ -136,6 +140,7 @@ describe("SignUp target", () => {
       UserLastModifiedDate: now.getTime(),
       UserStatus: "UNCONFIRMED",
       Username: expect.stringMatching(UUID),
+      Sub: expect.stringMatching(UUID),
     });
   });
 });

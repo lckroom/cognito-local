@@ -1,8 +1,7 @@
 {
   "name": "@lckroom/cognito-local",
-  "version": "0.1.0",
+  "version": "2.2.0",
   "license": "MIT",
-  "bin": "./lib/bin/start.js",
   "bin": "./lib/bin/start.js",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

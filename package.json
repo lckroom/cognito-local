@@ -1,6 +1,9 @@
 {
   "name": "@lckroom/cognito-local",
-  "version": "2.2.0",
+  "version": "2.2.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "bin": "./lib/bin/start.js",
   "main": "lib/index.js",

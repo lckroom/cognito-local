@@ -14,8 +14,7 @@ describe(
       expect(result).toEqual({
         UserPoolClient: {
           AllowedOAuthFlowsUserPoolClient: false,
-
-          ClientId: expect.any(String),
+          ClientId: expect.stringMatching(/^[a-z0-9]{24,25}$/),
           ClientName: "test",
           CreationDate: expect.any(Date),
           LastModifiedDate: expect.any(Date),

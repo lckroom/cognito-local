@@ -60,10 +60,10 @@ describe("User Pool Client", () => {
 
       expect(result).toEqual({
         AllowedOAuthFlowsUserPoolClient: false,
-        ClientId: expect.stringMatching(/^[a-z0-9]{25}$/),
+        ClientId: expect.stringMatching(/^[a-z0-9]{24,25}$/),
         ClientName: "clientName",
-        CreationDate: Math.floor(now.getTime()/1000),
-        LastModifiedDate: Math.floor(now.getTime()/1000),
+        CreationDate: Math.floor(now.getTime() / 1000),
+        LastModifiedDate: Math.floor(now.getTime() / 1000),
         RefreshTokenValidity: 30,
         UserPoolId: "local",
       });

@@ -1,3 +1,13 @@
+## [2.2.3](https://github.com/lckroom/cognito-local/compare/v2.2.2...v2.2.3) (2021-06-10)
+
+
+### Bug Fixes
+
+* accept any string for a client id ([4207e47](https://github.com/lckroom/cognito-local/commit/4207e47f01d2185c6f21b33ffc67c4a94fa8da3b))
+* configure semantic-release to push package.json ([888631c](https://github.com/lckroom/cognito-local/commit/888631c471475cb26763dbc38c9abd4205188156))
+* don't push typings to Git ([0c9d98a](https://github.com/lckroom/cognito-local/commit/0c9d98ac7c8a9d44d52757de7e2675a5f2dfff7e))
+* update regexes to accept client id of length 24 ([93281ee](https://github.com/lckroom/cognito-local/commit/93281ee8f23b90d5ece27b7eae97c2f968fafc1b))
+
 ## [2.2.2](https://github.com/lckroom/cognito-local/compare/v2.2.1...v2.2.2) (2021-06-10)
 
 

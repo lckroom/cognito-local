@@ -70,14 +70,14 @@ describe("Lambda function invoker", () => {
           userAttributes: {},
         });
 
-        // TODO awsSdkVersion atribute brokes the test with each update. Find a workaround. 
+        // TODO awsSdkVersion atribute brokes the test with each update. Find a workaround.
         expect(mockLambdaClient.invoke).toHaveBeenCalledWith({
           FunctionName: "MyLambdaName",
           InvocationType: "RequestResponse",
           Payload: JSON.stringify({
             version: 0,
             userName: "username",
-            callerContext: { awsSdkVersion: "2.829.0", clientId: "clientId" },
+            callerContext: { awsSdkVersion: "2.656.0", clientId: "clientId" },
             region: "local",
             userPoolId: "userPoolId",
             triggerSource: "UserMigration_Authentication",

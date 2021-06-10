@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/lckroom/cognito-local/compare/v2.2.0...v2.2.1) (2021-06-10)
+
+
+### Bug Fixes
+
+* duplicated bin entry in package.json ([285352a](https://github.com/lckroom/cognito-local/commit/285352a703447579e4e2b31b3b9d695698aeaf88))
+
 # [2.2.0](https://github.com/lckroom/cognito-local/compare/v2.1.0...v2.2.0) (2021-06-10)
 
 

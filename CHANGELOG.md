@@ -1,3 +1,11 @@
+## [2.2.2](https://github.com/lckroom/cognito-local/compare/v2.2.1...v2.2.2) (2021-06-10)
+
+
+### Bug Fixes
+
+* ensure our NPM publication is public ([e9e43f4](https://github.com/lckroom/cognito-local/commit/e9e43f4f6e141361df0eb319a941c06ae962bdec))
+* sync package.json version to changelog.md ([4264bea](https://github.com/lckroom/cognito-local/commit/4264bea3fdc56110f2845e109a5907e1a2c6afb4))
+
 ## [2.2.1](https://github.com/lckroom/cognito-local/compare/v2.2.0...v2.2.1) (2021-06-10)
 
 

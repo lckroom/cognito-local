@@ -1,3 +1,11 @@
+# [2.3.0](https://github.com/lckroom/cognito-local/compare/v2.2.3...v2.3.0) (2021-06-10)
+
+
+### Features
+
+* add run configurations for IntelliJ IDEA ([8e250ba](https://github.com/lckroom/cognito-local/commit/8e250ba8beac10f3cd1e3f066336ceb47344c3b0))
+* restore/improve functionality related to `sub` ([7599699](https://github.com/lckroom/cognito-local/commit/759969901d3d42976bc65387deafa2f3a4f459a5))
+
 ## [2.2.3](https://github.com/lckroom/cognito-local/compare/v2.2.2...v2.2.3) (2021-06-10)
 
 

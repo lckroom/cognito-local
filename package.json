@@ -1,8 +1,9 @@
 {
-  "name": "cognito-local",
-  "version": "0.0.0-development",
+  "name": "@lckroom/cognito-local",
+  "version": "0.1.0",
   "license": "MIT",
-  "bin": "lib/bin/start.js",
+  "bin": "./lib/bin/start.js",
+  "bin": "./lib/bin/start.js",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -96,6 +97,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jagregory/cognito-local.git"
+    "url": "https://github.com/lckroom/cognito-local.git"
   }
 }

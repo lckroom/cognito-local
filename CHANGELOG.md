@@ -1,3 +1,18 @@
+# [2.2.0](https://github.com/lckroom/cognito-local/compare/v2.1.0...v2.2.0) (2021-06-10)
+
+
+### Bug Fixes
+
+* awsSdkVersion breaking tests ([7d20f34](https://github.com/lckroom/cognito-local/commit/7d20f340c7e42ee5a6be0b3fff79e2975befd1ee))
+* sign up tests ([83c7c5f](https://github.com/lckroom/cognito-local/commit/83c7c5fd87b3ddab6cc70d92ede819ac3f08bb50))
+
+
+### Features
+
+* add more admin features and change password ([6339917](https://github.com/lckroom/cognito-local/commit/63399177ab4dc7b891425f9d4dd5d2756a71c60d))
+* add support for admin commands ([b65a5bf](https://github.com/lckroom/cognito-local/commit/b65a5bf99192e0ef88bac371cb7935a2c8ad299f))
+* upgrade Yarn to v2 ([e1f4236](https://github.com/lckroom/cognito-local/commit/e1f423625ea45edf0d481dd0f8380e4401deb4b7))
+
 # [2.1.0](https://github.com/jagregory/cognito-local/compare/v2.0.0...v2.1.0) (2020-05-10)
 
 
